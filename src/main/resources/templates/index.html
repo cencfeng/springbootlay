@@ -1,961 +1,133 @@
 <!DOCTYPE html>
-<head id="Head">
-    <script type="text/javascript">var allpane = 'headerAreaA|mainArea|footerAreaA|footerAreaB|bottomAreaA|fixedBottomArea|fixed-left|fixed-right|popup-area';</script>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>mjy</title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)" />
-    <link id="qhddefaultcontent10228_css" rel="stylesheet" type="text/css" href="/css/qhdcontent.css" />
-    <link id="_Portals__default_Skins_Jewellery_03_Html_css_content_css?ver=1_0" rel="stylesheet" type="text/css" href="/css/content.css" />
-    <link id="_Portals__default_Skins_Jewellery_03_Html_css_menu_css?ver=1_0" rel="stylesheet" type="text/css" href="/css/menu.css" />
-    <link id="_Portals__default_Skins_Jewellery_03_Html_css_jquery_fancybox_1_3_4_css?ver=1_0" rel="stylesheet" type="text/css" href="/css/jquery.fancybox-1.3.4.css" />
-    <link id="_Portals__default_Skins_Jewellery_03_Html_css_pgwslideshow_css?ver=1_0" rel="stylesheet" type="text/css" href="/css/pgwslideshow.css" />
-    <link id="_Portals__default_Skins_Jewellery_03_Html_css_animate_min_css?ver=1_0" rel="stylesheet" type="text/css" href="/css/animate.min.css" />
-    <link id="_Portals__default_Skins_Jewellery_03_Html_css_style_css?ver=1_2" rel="stylesheet" type="text/css" href="/css/style.css" />
-    <link id="_Portals__default_Skins_Jewellery_03_Html_css_style_yellow_css" rel="stylesheet" type="text/css" href="/css/style-yellow.css" />
-
-    <!--[if lt IE 9]>
-    <script src="/js/html5.js"></script>
-    <![endif]--><!--[if IE 6]>
-    <script type="text/javascript" src="/js/ie7.js"></script>
-    <script type="text/javascript" src="/js/dd_belatedpng.js"></script>
-    <script type="text/javascript">
-        DD_belatedPNG.fix('.top img, .footer img, .bottom img, .form-btn, .module-icon-default');
-    </script>
-    <![endif]-->
-    <meta http-equiv="X-UA-Compatible" content="IE=10;IE=9;IE=8;IE=EDGE" />
-    <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <!--<meta name="renderer" content="webkit">-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!--<meta http-equiv="Access-Control-Allow-Origin" content="*">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--<meta name="apple-mobile-web-app-status-bar-style" content="black">-->
+    <!--<meta name="apple-mobile-web-app-capable" content="yes">-->
+    <!--<meta name="format-detection" content="telephone=no">-->
+    <!--<link rel="icon" href="favicon.ico">-->
+    <link rel="stylesheet" href="/layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="/css/index.css" media="all" />
 </head>
-<!-- 外部样式 -->
-
-<body  style="background:url(/skin/img/bg-img-01.jpg) top center fixed;" class="font-zh-CN landing-page nobar blah" oncontextmenu=self.event.returnValue=false onselectstart="return false">
-<form name="Form" method="post" action="/" id="Form" enctype="multipart/form-data" style="height:inherit">
-    <div>
-        <input type="hidden" name="__VIEWSTATE_CACHEKEY" id="__VIEWSTATE_CACHEKEY" value="VS_so5ajmvs5qzccuotbe2fmcss_/" />
+<body class="main_body">
+<div class="layui-layout layui-layout-admin">
+    <!-- 顶部 -->
+    <div class="layui-header header">
+        <div class="layui-main mag0">
+            <a href="#" class="logo">layuiCMS 2.0</a>
+            <!-- 显示/隐藏菜单 -->
+            <a href="javascript:;" class="seraph hideMenu layui-icon layui-icon-shrink-right"></a>
+            <!-- 顶级菜单 -->
+            <ul class="layui-nav mobileTopLevelMenus" mobile>
+                <li class="layui-nav-item" data-menu="contentManagement">
+                    <a href="javascript:;"><i class="seraph icon-caidan"></i><cite>layuiCMS</cite></a>
+                    <dl class="layui-nav-child">
+                        <!--<dd class="layui-this" data-menu="contentManagement"><a href="javascript:;"><i class="layui-icon" data-icon="&#xe63c;">&#xe63c;</i><cite>内容管理</cite></a></dd>-->
+                        <!--<dd data-menu="memberCenter"><a href="javascript:;"><i class="seraph icon-icon10" data-icon="icon-icon10"></i><cite>用户中心</cite></a></dd>-->
+                        <!--<dd data-menu="systemeSttings"><a href="javascript:;"><i class="layui-icon" data-icon="&#xe620;">&#xe620;</i><cite>系统设置</cite></a></dd>-->
+                        <!--<dd data-menu="seraphApi"><a href="javascript:;"><i class="layui-icon" data-icon="&#xe705;">&#xe705;</i><cite>使用文档</cite></a></dd>-->
+                    </dl>
+                </li>
+            </ul>
+            <ul class="layui-nav topLevelMenus" pc>
+                <!--<li class="layui-nav-item layui-this" data-menu="contentManagement">-->
+                    <!--<a href="javascript:;"><i class="layui-icon" data-icon="&#xe63c;">&#xe63c;</i><cite>内容管理</cite></a>-->
+                <!--</li>-->
+                <!--<li class="layui-nav-item" data-menu="memberCenter" pc>-->
+                    <!--<a href="javascript:;"><i class="seraph icon-icon10" data-icon="icon-icon10"></i><cite>用户中心</cite></a>-->
+                <!--</li>-->
+                <!--<li class="layui-nav-item" data-menu="systemeSttings" pc>-->
+                    <!--<a href="javascript:;"><i class="layui-icon" data-icon="&#xe620;">&#xe620;</i><cite>系统设置</cite></a>-->
+                <!--</li>-->
+                <!--<li class="layui-nav-item" data-menu="seraphApi" pc>-->
+                    <!--<a href="javascript:;"><i class="layui-icon" data-icon="&#xe705;">&#xe705;</i><cite>使用文档</cite></a>-->
+                <!--</li>-->
+            </ul>
+            <!-- 顶部右侧菜单 -->
+            <ul class="layui-nav top_menu">
+                <!--<li class="layui-nav-item" pc>-->
+                    <!--<a href="javascript:;" class="clearCache"><i class="layui-icon" data-icon="&#xe640;">&#xe640;</i><cite>清除缓存</cite><span class="layui-badge-dot"></span></a>-->
+                <!--</li>-->
+                <li class="layui-nav-item lockcms" pc>
+                    <a href="javascript:;"><i class="seraph icon-lock"></i><cite>锁屏</cite></a>
+                </li>
+                <li class="layui-nav-item" id="userInfo">
+                    <a href="javascript:;"><img src="/images/face.jpg" class="layui-nav-img userAvatar" width="35" height="35"><cite class="adminName">驊驊龔頾</cite></a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" data-url="page/user/userInfo.html"><i class="seraph icon-ziliao" data-icon="icon-ziliao"></i><cite>个人资料</cite></a></dd>
+                        <dd><a href="javascript:;" data-url="page/user/changePwd.html"><i class="seraph icon-xiugai" data-icon="icon-xiugai"></i><cite>修改密码</cite></a></dd>
+                        <dd><a href="javascript:;" class="showNotice"><i class="layui-icon">&#xe645;</i><cite>系统公告</cite><span class="layui-badge-dot"></span></a></dd>
+                        <dd pc><a href="javascript:;" class="functionSetting"><i class="layui-icon">&#xe620;</i><cite>功能设定</cite><span class="layui-badge-dot"></span></a></dd>
+                        <dd pc><a href="javascript:;" class="changeSkin"><i class="layui-icon">&#xe61b;</i><cite>更换皮肤</cite></a></dd>
+                        <dd><a href="#" class="signOut"><i class="seraph icon-tuichu"></i><cite>退出</cite></a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
     </div>
-
-    <div id="wrapper" class="home-page">
-        <div class="wrapper-inner">
-            <div class="tmleftpart"></div>
-            <div class="tmrightpart"></div>
-            <div class="tmfooterleftpart"></div>
-            <div class="tmfooterrightpart"></div>
-            <!-- S touch-top-wrapper -->
-            <div class="touch-top mobile-section clearfix">
-                <div class="touch-top-wrapper clearfix">
-                    <div class="touch-logo" skinobjectzone="HtmlLogo_1607"><a class="" href="/"><img src="/skin/img/c245787a-2c13-4fe0-bd9a-370ab626ecfc_0_80.png" alt="中山碧儿时装" /></a></div>
-                    <!-- S touch-navigation -->
-                    <div class="touch-navigation">
-                        <div class="touch-toggle">
-                            <ul>
-                                <li class="touch-toggle-item-first"><a href="javascript:;" class="drawer-language" data-drawer="drawer-section-language"><i class="touch-icon-language"></i><span>语言</span></a></li>
-                                <li class="touch-toggle-item-last"><a href="javascript:;" class="drawer-menu" data-drawer="drawer-section-menu"><i class="touch-icon-menu"></i><span>导航</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- E touch-navigation --></div>
-                <!-- S touch-top -->
-                <div class="touch-toggle-content touch-top-home">
-                    <div class="drawer-section drawer-section-language">
-                        <ul class="touch-language clearfix" skinobjectzone="HtmlLanguage_1880">
-                            <li><a href="/en">ENGLISH</a></li>
-                            <li><a href="/">中文简体</a></li>
-                        </ul>
-                    </div>
-                    <div class="drawer-section drawer-section-menu">
-                        <div class="touch-menu" skinobjectzone="menu_2098">
-                            <ul>
-                                <li><a href="/"><span>首页</span></a></li>
-                                <li><a href="javascript:;"><span>关于我们</span><i class="touch-arrow-down"></i></a>
-                                    <ul>
-
-                                        <li><a href="/cn/About/Coprofile/"><span>企业简介</span></a></li>
-
-                                        <li><a href="/cn/About/Coculture/"><span>企业文化</span></a></li>
-
-                                        <li><a href="/cn/About/History/"><span>发展历程</span></a></li>
-
-                                        <li><a href="/cn/About/Fullview/"><span>生产实景</span></a></li>
-
-                                    </ul>
-                                </li><li><a href="javascript:;"><span>产品中心</span><i class="touch-arrow-down"></i></a>
-                                <ul>
-
-                                    <li><a href="/cn/Products/Wedding/"><span>婚纱</span></a></li>
-
-                                    <li><a href="/cn/Products/Accessories/"><span>婚饰</span></a></li>
-
-                                    <li><a href="/cn/Products/Canonicals/"><span>晚装</span></a></li>
-
-                                    <li><a href="/cn/Products/Evening_dress/"><span>毕业装</span></a></li>
-
-                                    <li><a href="/cn/Products/Fashion/"><span>时装</span></a></li>
-
-                                </ul>
-                            </li><li><a href="javascript:;"><span>样衣展示</span><i class="touch-arrow-down"></i></a>
-                                <ul>
-
-                                    <li><a href="/cn/About/Coprofile/"><span>关于我们</span></a></li>
-
-                                    <li><a href="/cn/Products/"><span>产品中心</span></a></li>
-
-                                    <li><a href="/cn/Show/"><span>样衣展示</span></a></li>
-
-                                    <li><a href="/cn/News/"><span>新闻资讯</span></a></li>
-
-                                    <li><a href="/cn/Contact/"><span>联系我们</span></a></li>
-
-                                </ul>
-                            </li><li><a href="javascript:;"><span>新闻资讯</span><i class="touch-arrow-down"></i></a>
-                                <ul>
-
-                                    <li><a href="/cn/News/Conews/"><span>公司新闻</span></a></li>
-
-                                    <li><a href="/cn/News/Innews/"><span>行业动态</span></a></li>
-
-                                    <li><a href="/cn/News/wiki/"><span>服饰百科</span></a></li>
-
-                                    <li><a href="/cn/News/Video/"><span>视频中心</span></a></li>
-
-                                </ul>
-                            </li><li><a href="javascript:;"><span>联系我们</span><i class="touch-arrow-down"></i></a>
-                                <ul>
-
-                                    <li><a href="/cn/About/Coprofile/"><span>关于我们</span></a></li>
-
-                                    <li><a href="/cn/Products/"><span>产品中心</span></a></li>
-
-                                    <li><a href="/cn/Show/"><span>样衣展示</span></a></li>
-
-                                    <li><a href="/cn/News/"><span>新闻资讯</span></a></li>
-
-                                    <li><a href="/cn/Contact/"><span>联系我们</span></a></li>
-
-                                </ul>
-                            </li>
-                                <li><a href="/cn/Contact/"><span>联系我们</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <script type="text/javascript">
-                        $(document).ready(function(){
-
-                            $(".touch-toggle a").click(function(event){
-                                var className = $(this).attr("data-drawer");
-
-                                if( $("."+className).css('display') == 'none' ){
-                                    $("."+className).slideDown().siblings(".drawer-section").slideUp();
-                                }else{
-                                    $(".drawer-section").slideUp();
-                                }
-                                event.stopPropagation();
-                            });
-
-                            /*$(document).click(function(){
-                             $(".drawer-section").slideUp();
-                            })*/
-
-                            $('.touch-menu a').click(function(){
-                                if( $(this).next().is('ul') ){
-                                    if( $(this).next('ul').css('display') == 'none' ){
-                                        $(this).next('ul').slideDown();
-                                        $(this).find('i').attr("class","touch-arrow-up");
-                                    }else{
-                                        $(this).next('ul').slideUp();
-                                        $(this).next('ul').find('ul').slideUp();
-                                        $(this).find('i').attr("class","touch-arrow-down");
-                                    }
-                                }
-                            });
-                        });
-                    </script></div>
-                <!-- E touch-top --></div>
-            <!-- E touch-top-wrapper -->
-            <!-- ==================== E top ==================== -->
-            <div class="main-content-inner"><!-- ==================== S header ==================== -->
-                <div id="a1portalSkin_headerAreaA" class="header"><!-- Start_Module_254485 --><a name="27230" id="27230"></a>
-                    <div class="module-default">
-                        <div class="module-inner">
-                            <div id="a1portalSkin_ctr254485254485_mainArea" class="module-content"><!-- Start_Module_254485 --><!-- S slideshow -->
-                                <div class="slideshow carousel clearfix" style="height:750px; overflow:hidden;">
-                                    <div id="carousel-254485"> <div class="carousel-item">
-                                        <div class="carousel-img"><a href="javascript:;" target=""><img src="/uploads/allimg/161023/1-161023135P10-L.jpg" height="750" alt="幻灯2" /></a></div>
-                                    </div>
-                                        <div class="carousel-item">
-                                            <div class="carousel-img"><a href="javascript:;" target=""><img src="/uploads/allimg/161023/1-161023135J90-L.jpg" height="750" alt="幻灯1" /></a></div>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-btn carousel-btn-fixed" id="carousel-page-254485"></div>
-                                </div>
-                                <script type="text/javascript">
-
-                                    $(window).bind("load resize",function(){
-                                        $("#carousel-254485").carouFredSel({
-                                            width       : '100%',
-                                            items  : { visible : 1 },
-                                            auto     : { pauseOnHover: true, timeoutDuration:5000 },
-                                            swipe     : { onTouch:true, onMouse:true },
-                                            pagination  : "#carousel-page-254485"
-                                            //prev   : { button:"#carousel-prev-254485"},
-                                            //next   : { button:"#carousel-next-254485"},
-                                            //scroll   : { fx : "crossfade" }
-                                        });
-                                    });
-                                </script><!-- E slideshow --><!-- End_Module_254485 --></div>
-                        </div>
-                    </div>
+    <!-- 左侧导航 -->
+    <div class="layui-side layui-bg-black">
+        <div class="user-photo">
+            <a class="img" title="我的头像" ><img src="/images/face.jpg" class="userAvatar"></a>
+            <p>你好！<span class="userName">驊驊龔頾</span></p>
+        </div>
+        <!-- 搜索 -->
+        <!--<div class="layui-form component">-->
+            <!--<select name="search" id="search" lay-search lay-filter="searchPage">-->
+                <!--<option value="">搜索页面或功能</option>-->
+                <!--<option value="1">layer</option>-->
+                <!--<option value="2">form</option>-->
+            <!--</select>-->
+            <!--<i class="layui-icon">&#xe615;</i>-->
+        <!--</div>-->
+        <div class="navBar layui-side-scroll" id="navBar">
+            <ul class="layui-nav layui-nav-tree layui-nav-side">
+                <!--<li class="layui-nav-item layui-this">-->
+                    <!--<a href="javascript:;" data-url="#"><i class="layui-icon" data-icon=""></i><cite>后台首页</cite></a>-->
+                <!--</li>-->
+            </ul>
+        </div>
+    </div>
+    <!-- 右侧内容 -->
+    <div class="layui-body layui-form">
+        <div class="layui-tab mag0" lay-filter="bodyTab" id="top_tabs_box">
+            <ul class="layui-tab-title top_tab" id="top_tabs">
+                <li class="layui-this" lay-id=""><i class="layui-icon">&#xe68e;</i> <cite>首页</cite></li>
+            </ul>
+            <ul class="layui-nav closeBox">
+                <li class="layui-nav-item">
+                    <a href="javascript:;"><i class="layui-icon caozuo">&#xe643;</i> 页面操作</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" class="refresh refreshThis"><i class="layui-icon">&#x1002;</i> 刷新当前</a></dd>
+                        <dd><a href="javascript:;" class="closePageOther"><i class="seraph icon-prohibit"></i> 关闭其他</a></dd>
+                        <dd><a href="javascript:;" class="closePageAll"><i class="seraph icon-guanbi"></i> 关闭全部</a></dd>
+                    </dl>
+                </li>
+            </ul>
+            <div class="layui-tab-content clildFrame">
+                <div class="layui-tab-item layui-show">
+                    <iframe src="http://baidu.com"></iframe>
                 </div>
-                <!-- ==================== E Header ==================== --><!-- ==================== S main ==================== -->
-                <section class="main">
-                    <div id="a1portalSkin_mainArea" class="full-screen"><!-- Start_Module_254486 --><a name="12481" id="12481"></a><!-- S module-full-screen -->
-                        <div class="module-full-screen" style="">
-                            <div class="module-inner not-animated" data-animate="fadeInUp" data-delay="200">
-                                <div class="page-width">
-                                    <div class="module-full-screen-title">
-                                        <h2>产品展示中心</h2>
-                                        <em class="module-full-screen-title-line"></em></div>
-                                    <div id="a1portalSkin_ctr254486254486_mainArea" class="module-full-screen-content"><!-- Start_Module_254486 --><!-- S tabs -->
-                                        <div class="tabs-default tabs-center">
-                                            <ul class="tabs-nav clearfix">
-                                                <li><a href="javascript:;" class=""><span>婚纱</span></a></li><li><a href="javascript:;" class=""><span>婚饰</span></a></li><li><a href="javascript:;" class=""><span>晚装</span></a></li><li><a href="javascript:;" class=""><span>毕业装</span></a></li><li><a href="javascript:;" class=""><span>时装</span></a></li>
-                                            </ul>
-                                            <div class="tabs-panes">
-                                                <div class="tab-box clearfix" style="display:block;">
-                                                    <div id="a1portalSkin_ctr254486254486_TabList_QHDSPM254486M251" class="tab-box-content"><!-- Start_Module_254492 --><a name="12482" id="12482"></a>
-                                                        <div class="module-default">
-                                                            <div class="module-inner">
-                                                                <div id="a1portalSkin_ctr254486254486_TabList_ctr254492254492_mainArea" class="module-content"><!-- Start_Module_254492 --><!-- S portfolio-list -->
-                                                                    <div class="portfolio-list product-list portfolio-list-no-mobile">
-                                                                        <ul class="column clearfix">
-
-
-                                                                            <li class='col-4-1 not-animated' data-animate='fadeInUp'>
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Wedding/20161025/96.html" target="_blank"><img src="/uploads/170806/1-1FP6201213916.jpg" alt="8608" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Wedding/20161025/96.html" target="_blank">8608</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-
-
-                                                                            <li class='col-4-1 not-animated' data-animate='fadeInUp'>
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Wedding/20161025/97.html" target="_blank"><img src="/uploads/170806/1-1FP620100U35.jpg" alt="8607" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Wedding/20161025/97.html" target="_blank">8607</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-
-
-                                                                            <li class='col-4-1 not-animated' data-animate='fadeInUp'>
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Wedding/20161025/98.html" target="_blank"><img src="/uploads/170806/1-1FP6200H02M.jpg" alt="8606" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Wedding/20161025/98.html" target="_blank">8606</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-
-                                                                            <li class='col-4-1 last not-animated' data-animate='fadeInUp'>
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Wedding/20161025/99.html" target="_blank"><img src="/uploads/170806/1-1FP6200515S5.jpg" alt="8605" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Wedding/20161025/99.html" target="_blank">8605</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-
-
-                                                                            <li class='col-4-1 not-animated' data-animate='fadeInUp'>
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Wedding/20161025/100.html" target="_blank"><img src="/uploads/170806/1-1FP6194141524.jpg" alt="8604" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Wedding/20161025/100.html" target="_blank">8604</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-
-
-                                                                            <li class='col-4-1 not-animated' data-animate='fadeInUp'>
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Wedding/20161025/101.html" target="_blank"><img src="/uploads/170806/1-1FP6193KBO.jpg" alt="8603" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Wedding/20161025/101.html" target="_blank">8603</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-
-
-                                                                            <li class='col-4-1 not-animated' data-animate='fadeInUp'>
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Wedding/20161025/102.html" target="_blank"><img src="/uploads/170806/1-1FP6193002333.jpg" alt="8602" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Wedding/20161025/102.html" target="_blank">8602</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-
-                                                                            <li class='col-4-1 last not-animated' data-animate='fadeInUp'>
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Wedding/20161025/103.html" target="_blank"><img src="/uploads/170806/1-1FP619250Q96.jpg" alt="8601" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Wedding/20161025/103.html" target="_blank">8601</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-
-                                                                        </ul>
-                                                                    </div>
-                                                                    <!-- E portfolio-list -->
-                                                                    <div class="portfolio-list-mobile">
-                                                                        <ul class="clearfix">
-                                                                            <li class="not-animated" data-animate="fadeInUp" >
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Wedding/20161025/96.html" target="_blank"><img src="/uploads/170806/1-1FP6201213916.jpg" alt="8608" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Wedding/20161025/96.html" target="_blank">8608</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-                                                                            <li class="not-animated" data-animate="fadeInUp" >
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Wedding/20161025/97.html" target="_blank"><img src="/uploads/170806/1-1FP620100U35.jpg" alt="8607" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Wedding/20161025/97.html" target="_blank">8607</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-                                                                            <li class="not-animated" data-animate="fadeInUp" >
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Wedding/20161025/98.html" target="_blank"><img src="/uploads/170806/1-1FP6200H02M.jpg" alt="8606" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Wedding/20161025/98.html" target="_blank">8606</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-                                                                            <li class="not-animated" data-animate="fadeInUp" >
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Wedding/20161025/99.html" target="_blank"><img src="/uploads/170806/1-1FP6200515S5.jpg" alt="8605" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Wedding/20161025/99.html" target="_blank">8605</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-                                                                            <li class="not-animated" data-animate="fadeInUp" >
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Wedding/20161025/100.html" target="_blank"><img src="/uploads/170806/1-1FP6194141524.jpg" alt="8604" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Wedding/20161025/100.html" target="_blank">8604</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-                                                                            <li class="not-animated" data-animate="fadeInUp" >
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Wedding/20161025/101.html" target="_blank"><img src="/uploads/170806/1-1FP6193KBO.jpg" alt="8603" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Wedding/20161025/101.html" target="_blank">8603</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-                                                                            <li class="not-animated" data-animate="fadeInUp" >
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Wedding/20161025/102.html" target="_blank"><img src="/uploads/170806/1-1FP6193002333.jpg" alt="8602" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Wedding/20161025/102.html" target="_blank">8602</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-                                                                            <li class="not-animated" data-animate="fadeInUp" >
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Wedding/20161025/103.html" target="_blank"><img src="/uploads/170806/1-1FP619250Q96.jpg" alt="8601" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Wedding/20161025/103.html" target="_blank">8601</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-
-                                                                        </ul>
-                                                                    </div>
-                                                                    <!-- End_Module_254492 --></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <p class="tab-more tab-more-center"><a href="/cn/Products/Wedding/" target="_blank">查看更多产品</a></p> </div>
-                                                <div class="tab-box clearfix" style="">
-                                                    <div id="a1portalSkin_ctr254486254486_TabList_QHDSPM254486M252" class="tab-box-content"><!-- Start_Module_254493 --><a name="12483" id="12483"></a>
-                                                        <div class="module-default">
-                                                            <div class="module-inner">
-                                                                <div id="a1portalSkin_ctr254486254486_TabList_ctr254493254493_mainArea" class="module-content"><!-- Start_Module_254493 --><!-- S portfolio-list -->
-                                                                    <div class="portfolio-list product-list portfolio-list-no-mobile">
-                                                                        <ul class="column clearfix">
-
-                                                                        </ul>
-                                                                    </div>
-                                                                    <!-- E portfolio-list -->
-                                                                    <div class="portfolio-list-mobile">
-                                                                        <ul class="clearfix">
-
-                                                                        </ul>
-                                                                    </div>
-                                                                    <!-- End_Module_254493 --></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <p class="tab-more tab-more-center"><a href="/cn/Products/Accessories/" target="_blank">查看更多产品</a></p> </div>
-                                                <div class="tab-box clearfix" style="">
-                                                    <div id="a1portalSkin_ctr254486254486_TabList_QHDSPM254486M253" class="tab-box-content"><!-- Start_Module_254494 --><a name="12484" id="12484"></a>
-                                                        <div class="module-default">
-                                                            <div class="module-inner">
-                                                                <div id="a1portalSkin_ctr254486254486_TabList_ctr254494254494_mainArea" class="module-content"><!-- Start_Module_254494 --><!-- S portfolio-list -->
-                                                                    <div class="portfolio-list product-list portfolio-list-no-mobile">
-                                                                        <ul class="column clearfix">
-
-
-                                                                            <li class='col-4-1 not-animated' data-animate='fadeInUp'>
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Canonicals/20161025/126.html" target="_blank"><img src="/uploads/170806/1-1FP620223BJ.jpg" alt="6506" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Canonicals/20161025/126.html" target="_blank">6506</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-
-
-                                                                            <li class='col-4-1 not-animated' data-animate='fadeInUp'>
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Canonicals/20161025/127.html" target="_blank"><img src="/uploads/170806/1-1FP6202056326.jpg" alt="6503" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Canonicals/20161025/127.html" target="_blank">6503</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-
-
-                                                                            <li class='col-4-1 not-animated' data-animate='fadeInUp'>
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Canonicals/20161025/128.html" target="_blank"><img src="/uploads/170806/1-1FP6201U0150.jpg" alt="6502" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Canonicals/20161025/128.html" target="_blank">6502</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-
-                                                                            <li class='col-4-1 last not-animated' data-animate='fadeInUp'>
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Canonicals/20161025/129.html" target="_blank"><img src="/uploads/170806/1-1FP6201642a4.jpg" alt="6501" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Canonicals/20161025/129.html" target="_blank">6501</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-
-                                                                        </ul>
-                                                                    </div>
-                                                                    <!-- E portfolio-list -->
-                                                                    <div class="portfolio-list-mobile">
-                                                                        <ul class="clearfix">
-                                                                            <li class="not-animated" data-animate="fadeInUp" >
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Canonicals/20161025/126.html" target="_blank"><img src="/uploads/170806/1-1FP620223BJ.jpg" alt="6506" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Canonicals/20161025/126.html" target="_blank">6506</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-                                                                            <li class="not-animated" data-animate="fadeInUp" >
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Canonicals/20161025/127.html" target="_blank"><img src="/uploads/170806/1-1FP6202056326.jpg" alt="6503" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Canonicals/20161025/127.html" target="_blank">6503</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-                                                                            <li class="not-animated" data-animate="fadeInUp" >
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Canonicals/20161025/128.html" target="_blank"><img src="/uploads/170806/1-1FP6201U0150.jpg" alt="6502" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Canonicals/20161025/128.html" target="_blank">6502</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-                                                                            <li class="not-animated" data-animate="fadeInUp" >
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Canonicals/20161025/129.html" target="_blank"><img src="/uploads/170806/1-1FP6201642a4.jpg" alt="6501" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Canonicals/20161025/129.html" target="_blank">6501</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-
-                                                                        </ul>
-                                                                    </div>
-                                                                    <!-- End_Module_254491 --></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <p class="tab-more tab-more-center"><a href="/cn/Products/Canonicals/" target="_blank">查看更多产品</a></p> </div>
-
-                                                <div class="tab-box clearfix" style="">
-                                                    <div id="a1portalSkin_ctr254486254486_TabList_QHDSPM254486M253" class="tab-box-content"><!-- Start_Module_254494 --><a name="12484" id="12484"></a>
-                                                        <div class="module-default">
-                                                            <div class="module-inner">
-                                                                <div id="a1portalSkin_ctr254486254486_TabList_ctr254494254494_mainArea" class="module-content"><!-- Start_Module_254494 --><!-- S portfolio-list -->
-                                                                    <div class="portfolio-list product-list portfolio-list-no-mobile">
-                                                                        <ul class="column clearfix">
-
-                                                                        </ul>
-                                                                    </div>
-                                                                    <!-- E portfolio-list -->
-                                                                    <div class="portfolio-list-mobile">
-                                                                        <ul class="clearfix">
-
-                                                                        </ul>
-                                                                    </div>
-                                                                    <!-- End_Module_254491 --></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <p class="tab-more tab-more-center"><a href="/cn/Products/Evening_dress/" target="_blank">查看更多产品</a></p> </div>
-
-                                                <div class="tab-box clearfix" style="">
-                                                    <div id="a1portalSkin_ctr254486254486_TabList_QHDSPM254486M254" class="tab-box-content"><!-- Start_Module_254491 --><a name="12485" id="12485"></a>
-                                                        <div class="module-default">
-                                                            <div class="module-inner">
-                                                                <div id="a1portalSkin_ctr254486254486_TabList_ctr254491254491_mainArea" class="module-content"><!-- Start_Module_254491 --><!-- S portfolio-list -->
-                                                                    <div class="portfolio-list product-list portfolio-list-no-mobile">
-                                                                        <ul class="column clearfix">
-
-
-                                                                            <li class='col-4-1 not-animated' data-animate='fadeInUp'>
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Fashion/20170925/175.html" target="_blank"><img src="/uploads/170918/170925/1-1F9252215493B.JPG" alt="D2106" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Fashion/20170925/175.html" target="_blank">D2106</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-
-
-                                                                            <li class='col-4-1 not-animated' data-animate='fadeInUp'>
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Fashion/20161025/140.html" target="_blank"><img src="/uploads/170806/1-1FP6203131B7.jpg" alt="D2104" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Fashion/20161025/140.html" target="_blank">D2104</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-
-
-                                                                            <li class='col-4-1 not-animated' data-animate='fadeInUp'>
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Fashion/20161025/141.html" target="_blank"><img src="/uploads/170806/1-1FP6202951537.jpg" alt="D2103" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Fashion/20161025/141.html" target="_blank">D2103</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-
-                                                                            <li class='col-4-1 last not-animated' data-animate='fadeInUp'>
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Fashion/20161025/142.html" target="_blank"><img src="/uploads/170806/1-1FP6202JI11.jpg" alt="D2101" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Fashion/20161025/142.html" target="_blank">D2101</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-
-
-                                                                            <li class='col-4-1 not-animated' data-animate='fadeInUp'>
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Fashion/20161025/143.html" target="_blank"><img src="/uploads/170806/1-1FP6202543137.jpg" alt="D2100" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Fashion/20161025/143.html" target="_blank">D2100</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-
-                                                                        </ul>
-                                                                    </div>
-                                                                    <!-- E portfolio-list -->
-                                                                    <div class="portfolio-list-mobile">
-                                                                        <ul class="clearfix">
-                                                                            <li class="not-animated" data-animate="fadeInUp" >
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Fashion/20170925/175.html" target="_blank"><img src="/uploads/170918/170925/1-1F9252215493B.JPG" alt="D2106" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Fashion/20170925/175.html" target="_blank">D2106</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-                                                                            <li class="not-animated" data-animate="fadeInUp" >
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Fashion/20161025/140.html" target="_blank"><img src="/uploads/170806/1-1FP6203131B7.jpg" alt="D2104" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Fashion/20161025/140.html" target="_blank">D2104</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-                                                                            <li class="not-animated" data-animate="fadeInUp" >
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Fashion/20161025/141.html" target="_blank"><img src="/uploads/170806/1-1FP6202951537.jpg" alt="D2103" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Fashion/20161025/141.html" target="_blank">D2103</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-                                                                            <li class="not-animated" data-animate="fadeInUp" >
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Fashion/20161025/142.html" target="_blank"><img src="/uploads/170806/1-1FP6202JI11.jpg" alt="D2101" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Fashion/20161025/142.html" target="_blank">D2101</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-                                                                            <li class="not-animated" data-animate="fadeInUp" >
-                                                                                <div class="product-item">
-                                                                                    <div class="portfolio-img"><a href="/cn/Products/Fashion/20161025/143.html" target="_blank"><img src="/uploads/170806/1-1FP6202543137.jpg" alt="D2100" /></a></div>
-                                                                                    <div class="portfolio-title">
-                                                                                        <h2><a href="/cn/Products/Fashion/20161025/143.html" target="_blank">D2100</a></h2>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-
-                                                                        </ul>
-                                                                    </div>
-                                                                    <!-- End_Module_254491 --></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <p class="tab-more tab-more-center"><a href="/cn/Products/Fashion/" target="_blank">查看更多产品</a></p> </div>
-                                            </div>
-                                        </div>
-                                        <!-- E tabs --><!-- End_Module_254486 --></div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- E module-full-screen --><!-- Start_Module_254487 --><a name="12487" id="12487"></a>
-                        <div class="module-default">
-                            <div class="module-inner">
-                                <div id="a1portalSkin_ctr254487254487_mainArea" class="module-content"><!-- Start_Module_254487 -->
-                                    <div class="qhd-module">
-                                        <div class="column marg-per0">
-                                            <div class="col-2-1">
-                                                <div id="a1portalSkin_ctr254487254487_Column4C25A25A25A25_QHDCPM254487M1" class="qhd_column_contain"><!-- Start_Module_254495 --><a name="14106" id="14106"></a>
-                                                    <div class="module-default">
-                                                        <div class="module-inner">
-                                                            <div id="a1portalSkin_ctr254487254487_Column4C25A25A25A25_ctr254495254495_mainArea" class="module-content"><!-- Start_Module_254495 --><!-- S link-setion -->
-                                                                <div class="link-setion"><a href="/cn/News/Video/" target="_blank">
-                                                                    <div class="link-img"><img src="/skin/img/48ea32be-a94d-4e3a-966d-13d36eb6ad3e.jpg" alt="视频中心" /></div>
-                                                                    <div class="link-name-default">
-                                                                        <h3>视频中心</h3>
-                                                                    </div>
-                                                                    <div class="link-setion-text">
-                                                                        <div class="link-name">
-                                                                            <h3>视频中心</h3>
-                                                                        </div>
-                                                                        <div class="link-summary">
-                                                                            <p>秉承“做中国彩宝专家”的坚定信念，专注于研发和推广彩宝镶嵌首饰</p>
-                                                                        </div>
-                                                                        <span class="link-more">查看详情</span></div>
-                                                                    <div class="opacity-overlay"></div>
-                                                                </a></div>
-                                                                <!-- E link-setion --><!-- End_Module_254495 --></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-2-1 last">
-                                                <div id="a1portalSkin_ctr254487254487_Column4C25A25A25A25_QHDCPM254487M2" class="qhd_column_contain"><!-- Start_Module_254496 --><a name="14107" id="14107"></a>
-                                                    <div class="module-default">
-                                                        <div class="module-inner">
-                                                            <div id="a1portalSkin_ctr254487254487_Column4C25A25A25A25_ctr254496254496_mainArea" class="module-content"><!-- Start_Module_254496 --><!-- S link-setion -->
-                                                                <div class="link-setion"><a href="/cn/Show/" target="_blank">
-                                                                    <div class="link-img"><img src="/skin/img/a3e381ef-9018-445b-810e-445b96fb34e6.jpg" alt="样衣展示" /></div>
-                                                                    <div class="link-name-default">
-                                                                        <h3>样衣展示</h3>
-                                                                    </div>
-                                                                    <div class="link-setion-text">
-                                                                        <div class="link-name">
-                                                                            <h3>样衣展示</h3>
-                                                                        </div>
-                                                                        <div class="link-summary">
-                                                                            <p>秉承“做中国彩宝专家”的坚定信念，专注于研发和推广彩宝镶嵌首饰</p>
-                                                                        </div>
-                                                                        <span class="link-more">查看详情</span></div>
-                                                                    <div class="opacity-overlay"></div>
-                                                                </a></div>
-                                                                <!-- E link-setion --><!-- End_Module_254496 --></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> </div>
-                                    </div>
-                                    <!-- End_Module_254487 --></div>
-                            </div>
-                        </div>
-                        <!-- Start_Module_254497 --><a name="14108" id="14108"></a><!-- S module-full-screen -->
-                        <div class="module-full-screen module-full-screen-gray" style="">
-                            <div class="module-inner not-animated" data-animate="fadeInDown" data-delay="200">
-                                <div class="page-width">
-                                    <div class="module-full-screen-title">
-                                        <h2>关于我们</h2>
-                                        <em class="module-full-screen-title-line"></em></div>
-                                    <div id="a1portalSkin_ctr254497254497_mainArea" class="module-full-screen-content"><!-- Start_Module_254497 -->
-                                        <div class="qhd-content">
-                                            <p style="text-align: center;"> <span style="font-size:16px;">  中山市碧儿时装有限公司，是一家涵盖婚纱、晚礼服、伴娘装、时尚女装、流行牛仔裤、少女装的生产、设计、销售一体的现代化服装公司。 碧儿时装，是由一群志同道合的年轻人共同创建的服装公司。时尚优雅（billfashion）,男儿本色（Boy friend）。碧儿是外优内雅的代名词，既有春水碧绿的雅性，又能做到小鸟之优美。 作为集研发、设计、生产、营销、信息化于一体的现代化企业，始终本着诚实经营，道德经商，制造经典，创造完美的经营宗旨，依靠先进的设备，严格的管理，精细的制作工艺，稳定的产品质量，快捷的配送物流以及周到的客户服务，赢得了广大客户的信赖和一致好评。 公司力求从质量、时间、服务上，做到最好，立志成为行业内最受顾客信赖的企业之一。同时，我们将打造成行业内让员工最幸福、最引以为豪的企业之一。  </span></p>
-                                            <p style="text-align: center;"> <a href="/cn/About/Coprofile/" style="line-height: 1.8;" target="_blank"><img alt="" src="/skin/img/2e1a2178-0056-4f6d-80e3-799018918fd5.jpg" style="width: 720px; height: 180px;" /></a></p> </div>
-                                        <!-- End_Module_254497 --></div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- E module-full-screen --><!-- Start_Module_254498 --><a name="14109" id="14109"></a><!-- S module-full-screen -->
-                        <div class="module-full-screen" style="">
-                            <div class="module-inner not-animated" data-animate="fadeInUp" data-delay="200">
-                                <div class="page-width">
-                                    <div class="module-full-screen-title">
-                                        <h2>最新资讯</h2>
-                                        <em class="module-full-screen-title-line"></em></div>
-                                    <div id="a1portalSkin_ctr254498254498_mainArea" class="module-full-screen-content"><!-- Start_Module_254498 --><!-- S post-list-3col -->
-                                        <div class="post-list post-list-3col clearfix">
-                                            <div class="post-list-item clearfix">
-                                                <div class="post-img"><a href="/cn/News/Conews/20171015/177.html" target="_blank"><img src="/uploads/allimg/171015/1-1G0151019180-L.jpg" alt=""/><span></span><i></i></a></div>
-                                                <div class="post-text-box light-box">
-                                                    <div class="post-text">
-                                                        <h2><a href="/cn/News/Conews/20171015/177.html" target="_blank">外一篇 念乡愁</a></h2>
-                                                        <div class="post-text-summary">
-                                                            <div class="qhd-content">
-                                                                <p> 外一篇
-                                                                    念乡愁
-                                                                    美丽沙村，我永远的乡愁！...</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <em class="post-arrow"></em></div>
-                                            </div>
-
-                                            <div class='post-list-item post-list-item-spec clearfix'>
-                                                <div class="post-img"><a href="/cn/News/Conews/20161023/11.html" target="_blank"><img src="/uploads/allimg/161023/1-1610232010220-L.png" alt=""/><span></span><i></i></a></div>
-                                                <div class="post-text-box light-box">
-                                                    <div class="post-text">
-                                                        <h2><a href="/cn/News/Conews/20161023/11.html" target="_blank">珠宝领衔入驻广珠宝大厦</a></h2>
-                                                        <div class="post-text-summary">
-                                                            <div class="qhd-content">
-                                                                <p> 中国人去了那儿，总是一路走一路问，不知道尊重工作人员，不懂得起码的礼貌，只觉得自己花钱了，就要可劲地折腾，总觉得自己花钱就可以高高在上，这不满意、那也不满意，折腾...</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <em class="post-arrow"></em></div>
-                                            </div>
-
-                                            <div class='post-list-item clearfix'>
-                                                <div class="post-img"><a href="/cn/News/Conews/20161023/8.html" target="_blank"><img src="/uploads/allimg/161023/1-161023200P10-L.png" alt=""/><span></span><i></i></a></div>
-                                                <div class="post-text-box light-box">
-                                                    <div class="post-text">
-                                                        <h2><a href="/cn/News/Conews/20161023/8.html" target="_blank">唤醒春日好时光</a></h2>
-                                                        <div class="post-text-summary">
-                                                            <div class="qhd-content">
-                                                                <p> 朋友的表姐是开出租车的。 那天她不幸被四个强悍的歹徒绑架到一个荒僻、偏远的地方。寒冬、深夜敌我力量的反差，情况之危急可想而知。 朋友的表姐一边慢慢和歹徒周旋，一边想...</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <em class="post-arrow"></em></div>
-                                            </div>
-
-                                            <!-- E post-list-3col --><!-- End_Module_254498 --></div>
-                                    </div>
-
-                                    <div class="module-full-screen-more"><a href="/cn/News/Conews/" target="_blank">查看更多资讯</a></div> </div>
-                            </div>
-                        </div>
-                        <!-- E module-full-screen --></div>
-                    <!-- end of page-width --></section>
-                <!-- ==================== E main ==================== --><!-- ==================== S footer ==================== -->
-                <footer class="footer">
-                    <div id="a1portalSkin_footerAreaA" class="footer-extra"><!-- Start_Module_254499 --><a name="12471" id="12471"></a><!-- S module-full-screen -->
-                        <div class="module-full-screen module-full-screen-gray" style="">
-                            <div class="module-inner not-animated" data-animate="fadeInDown" data-delay="200">
-                                <div id="a1portalSkin_ctr254499254499_mainArea" class="module-full-screen-content"><!-- Start_Module_254499 -->
-                                    <div class="qhd-module">
-                                        <div class="column marg-per2">
-                                            <div class="col-3-1">
-                                                <div id="a1portalSkin_ctr254499254499_Column2C33A67_QHDCPM254499M1" class="qhd_column_contain"><!-- Start_Module_254489 --><a name="12472" id="12472"></a>
-                                                    <div class="module-default">
-                                                        <div class="module-inner">
-                                                            <div id="a1portalSkin_ctr254499254499_Column2C33A67_ctr254489254489_mainArea" class="module-content"><!-- Start_Module_254489 -->
-                                                                <div class="qhd-content">
-                                                                    <p style="text-align: center;"> <span style="color:#000000;"><span style="font-size:22px;">联系我们</span></span></p>
-                                                                    <p style="text-align: center;"> <span style="font-size:24px;">135-9072-0402</span><br />
-                                                                        <br />
-                                                                        &nbsp;cashliubaoqing@billfashion.com&nbsp;</p>
-                                                                    <p style="text-align: center;"> <a href="http://www.weibo.com" target="_blank"><img alt="" src="/skin/img/429824a7-d4b7-4872-b6e8-ba94b9144d49.jpg" style="width: 24px; height: 24px;" /></a>&nbsp;&nbsp;<a href="http://t.qq.com" target="_blank"><img alt="" src="/skin/img/9ed13ef8-5f74-422c-ae95-0c8cb4d210ef.jpg" style="width: 24px; height: 24px;" /></a> &nbsp;<a href="http://www.douban.com" target="_blank"><img alt="" src="/skin/img/2b3d0cbd-5775-4ea4-967c-bc2e0eecd77c.png" style="width: 24px; height: 24px;" /></a> &nbsp;<a href="http://www.tmall.com" target="_blank"><img alt="" src="/skin/img/169cd531-1238-42a1-812f-0cee61e1509b.jpg" style="width: 24px; height: 24px;" /></a></p>
-                                                                </div>
-                                                                <!-- End_Module_254489 --></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-3-1">
-                                                <div id="a1portalSkin_ctr254499254499_Column2C33A67_QHDCPM254499M2" class="qhd_column_contain"><!-- Start_Module_254500 --><a name="14110" id="14110"></a>
-                                                    <div class="module-default">
-                                                        <div class="module-inner">
-                                                            <div id="a1portalSkin_ctr254499254499_Column2C33A67_ctr254500254500_mainArea" class="module-content"><!-- Start_Module_254500 -->
-                                                                <div class="qhd-content">
-                                                                    <p style="text-align: center;"> <span style="color:#000000;"><span style="font-size:22px;">企业文化</span></span></p>
-                                                                    <p style="text-align: center;"> <span style="font-size:16px;">公司力求从质量、时间、服务上，做到最好，立志成为行业内最受顾客信赖的企业之一。
-同时，我们将打造成行业内让员工最幸福、最引以为豪的企业之一</span></p>
-                                                                </div>
-                                                                <!-- End_Module_254500 --></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-3-1 last">
-                                                <div id="a1portalSkin_ctr254499254499_Column2C33A67_QHDCPM254499M3" class="qhd_column_contain"><!-- Start_Module_254501 --><a name="14111" id="14111"></a>
-                                                    <div class="module-default">
-                                                        <div class="module-inner">
-                                                            <div id="a1portalSkin_ctr254499254499_Column2C33A67_ctr254501254501_mainArea" class="module-content"><!-- Start_Module_254501 -->
-                                                                <div class="qhd-content">
-                                                                    <p style="text-align: center;"> <span style="color:#000000;"><span style="font-size:22px;">关注官方微信</span></span></p>
-                                                                    <p style="text-align: center;"> <img alt="" src="/skin/img/weixin.png" style="width: 130px; height: 130px;" /></p>
-                                                                </div>
-                                                                <!-- End_Module_254501 --></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Friend Link-->
-                                    <div class="span4 col-xm-6 col-xs-12">
-                                        <div class="footer_list">
-                                            <div class="footer_link">
-                                                <div class="footer_link_title">友情链接</div>
-                                                <ul id="frientLinks">
-
-                                                    <li><a href='http://vx.openone.cn' target='_blank'>汇营销</a> </li>
-
-                                                    <li><a href='https://vd.openone.cn' target='_blank'>汇商通</a> </li>
-
-                                                    <li><a href='http://des.openone.cn' target='_blank'>汇创意</a> </li>
-
-                                                    <li><a href='http://bbs.openone.cn' target='_blank'>汇分享</a> </li>
-
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--End_FriendLink-->
-
-
-                                    <!-- End_Module_254499 --></div>
-                            </div>
-                        </div>
-                        <!-- E module-full-screen --></div>
-                    <div class="footer-main">
-                        <div id="a1portalSkin_footerAreaB" class="page-width clearfix"><!-- Start_Module_254502 --><a name="14112" id="14112"></a>
-                            <div class="module-default">
-                                <div class="module-inner">
-                                    <div id="a1portalSkin_ctr254502254502_mainArea" class="module-content"><!-- Start_Module_254502 -->
-                                        <div class="qhd-module">
-                                            <div class="column marg-per5">
-                                                <div class="col-2-1">
-                                                    <div id="a1portalSkin_ctr254502254502_Column2C50A50_QHDCPM254502M1" class="qhd_column_contain"><!-- Start_Module_254503 --><a name="14113" id="14113"></a>
-                                                        <div class="module-default">
-                                                            <div class="module-inner">
-                                                                <div id="a1portalSkin_ctr254502254502_Column2C50A50_ctr254503254503_mainArea" class="module-content"><!-- Start_Module_254503 -->
-                                                                    <div class="qhd-content">
-                                                                        <p style="text-align: right;"><span style="font-size:16px;"> 电 话：135-9072-0402 &nbsp; &nbsp; 传 真： &nbsp; &nbsp; 邮箱：cashliubaoqing@billfashion.com</span></p>
-                                                                        <p style="text-align: right;"><span style="font-size:16px;">  地址：中山市沙溪镇圣狮海傍西路9号</span></p>
-                                                                    </div>
-                                                                    <!-- End_Module_254503 --></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-2-1 last">
-                                                    <div id="a1portalSkin_ctr254502254502_Column2C50A50_QHDCPM254502M2" class="qhd_column_contain"><!-- Start_Module_254504 --><a name="14114" id="14114"></a>
-                                                        <div class="module-default">
-                                                            <div class="module-inner">
-                                                                <div id="a1portalSkin_ctr254502254502_Column2C50A50_ctr254504254504_mainArea" class="module-content"><!-- Start_Module_254504 -->
-                                                                    <div class="qhd-content">
-                                                                        <p><span style="font-size:16px;">
-                                    &nbsp;&nbsp;<a href="/cn/About/Coprofile/">企业简介</a>&nbsp; &nbsp;|&nbsp;&nbsp;<a href="/cn/About/History/">发展历程</a>&nbsp; &nbsp;|&nbsp;&nbsp;<a href="/cn/Products/">产品中心</a>&nbsp; &nbsp;|&nbsp;&nbsp;<a href="/cn/About/Fullview/">生产实景</a>&nbsp; &nbsp;|  &nbsp;&nbsp;
-                                    <a href="/cn/Show/">样衣展示</a>
-                                    </span></p>
-                                                                        <p><span style="font-size:16px;">  &nbsp;&nbsp;<a href="/cn/News/Conews/">公司新闻</a>&nbsp; &nbsp;|&nbsp;&nbsp;<a href="/cn/News/Innews/">行业动态</a>&nbsp; &nbsp;|&nbsp;&nbsp;
-                                    <a href="/cn/News/Video/">视频中心</a> </span></p>
-                                                                    </div>
-                                                                    <!-- End_Module_254504 --></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End_Module_254502 --></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-                <!-- ==================== E footer ==================== --><!-- ==================== S bottom ==================== -->
-                <section class="bottom">
-                    <div id="a1portalSkin_bottomAreaA" class="page-width clearfix"><!-- Start_Module_254484 --><a name="12479" id="12479"></a>
-                        <div class="module-default module-no-margin">
-                            <div class="module-inner">
-                                <div id="a1portalSkin_ctr254484254484_mainArea" class="module-content"><!-- Start_Module_254484 -->
-                                    <div class="qhd-content">
-                                        <p style="text-align: center;"> Copyright © 2017-2018 Billfashion 版权所有    &nbsp;&nbsp;&nbsp;</p>
-                                    </div>
-                                    <!-- End_Module_254484 --></div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- ==================== E bottom ==================== --></div>
+            </div>
         </div>
     </div>
-    <!-- end of wrapper --><!-- S fixed-bottom  -->
-    <div id="a1portalSkin_fixedBottomArea" class="QHDEmptyArea fixed-bottom"></div>
-    <!-- E fixed-bottom  --><!-- S fixed-side -->
-    <div id="a1portalSkin_fixed-left" class="QHDEmptyArea fixed-side fixed-left"></div>
-    <!-- E fixed-side --><!-- S fixed-side -->
-    <div id="a1portalSkin_fixed-right" class="QHDEmptyArea fixed-side fixed-right"></div>
-    <!-- E fixed-side --><!-- S popup -->
-    <div id="popup" class="popup">
-        <div class="popup-content not-animated" data-animate="fadeInDown">
-            <div id="a1portalSkin_popup-area" class="QHDEmptyArea popup-content-wrapper"></div>
-            <div class="popup-close-btn"><a href="javascript:;" title="关闭"><span>关闭</span></a></div>
-        </div>
-        <div class="popup-overlay"></div>
+    <!-- 底部 -->
+    <div class="layui-footer footer">
+        <p><span>copyright @2018 驊驊龔頾</span>　　<a onclick="donation()" class="layui-btn layui-btn-danger layui-btn-sm">捐赠作者</a></p>
     </div>
-    <!-- E popup --><!-- E go top -->
-    <div class="gotop-wrapper"><a href="javascript:;" class="fixed-gotop gotop"></a></div>
-    <!-- E go top -->
-    <input name="ScrollTop" type="hidden" id="ScrollTop" />
-    <input name="__a1portalVariable" type="hidden" id="__a1portalVariable" />
-    <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="" />
-</form>
+</div>
 
-<!-- 外部脚本 -->
-<script src="/js/a1portalcore.js" type="text/javascript"></script>
-<script src="/js/a1portal.js"></script>
-<script src="/js/jquery-1.7.2.min.js"></script>
-<script src="/js/superfish.js"></script>
-<script src="/js/jquery.caroufredsel.js"></script>
-<script src="/js/jquery.touchswipe.min.js"></script>
-<script src="/js/jquery.tools.min.js"></script>
-<script src="/js/jquery.fancybox-1.3.4.pack.js"></script>
-<script src="/js/pgwslideshow.min.js"></script>
-<script src="/js/jquery.fixed.js"></script>
-<script src="/js/cloud-zoom.1.0.2.min.js"></script>
-<script src="/js/device.min.js"></script>
-<script src="/js/html5media-1.2.js"></script>
-<script src="/js/animate.min.js"></script>
-<script src="/js/custom.js"></script>
+<!-- 移动导航 -->
+<div class="site-tree-mobile"><i class="layui-icon">&#xe602;</i></div>
+<div class="site-mobile-shade"></div>
+
+<script type="text/javascript" src="/layui/layui.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+<script type="text/javascript" src="/js/cache.js"></script>
 </body>
 </html>
