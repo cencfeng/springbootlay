@@ -3,5 +3,6 @@ package com.fashion.mjysite.service;
 import com.fashion.mjysite.entity.User;
 
 public interface UserService {
-    User seletUserByAccount(String account);
+    User selectUserByUserName(String username);
+    User selectUserMapByUserName(String username);
 }

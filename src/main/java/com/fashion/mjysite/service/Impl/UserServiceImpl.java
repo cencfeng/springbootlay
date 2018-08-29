@@ -6,14 +6,18 @@ import com.fashion.mjysite.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
     @Override
-    public User seletUserByAccount(String account) {
-        User user = userMapper.seletUserByAccount(account);
+    public User selectUserByUserName(String username) {
+        User user = userMapper.selectUserByUserName(username);
         return user;
+    }
+
+    @Override
+    public User selectUserMapByUserName(String username) {
+        return userMapper.selectUserMapByUserName(username);
     }
 }
