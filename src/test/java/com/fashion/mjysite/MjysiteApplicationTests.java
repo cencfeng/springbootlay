@@ -1,6 +1,8 @@
 package com.fashion.mjysite;
 
+import com.fashion.mjysite.entity.Menu;
 import com.fashion.mjysite.entity.User;
+import com.fashion.mjysite.service.MenuService;
 import com.fashion.mjysite.service.UserService;
 import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.util.ByteSource;
@@ -10,11 +12,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class MjysiteApplicationTests {
 	@Autowired
 	private UserService userService;
+	@Autowired
+	private MenuService menuService;
 
 	@Test
 	public void contextLoads() {
@@ -34,6 +40,16 @@ public class MjysiteApplicationTests {
 		ByteSource salt = ByteSource.Util.bytes("chengfeng");
 		String result = new SimpleHash(hashAlgorithmName, mima, salt, hashIterations).toBase64();
 		System.out.println(result);
+	}
+	@Test
+	public void getMenuByUsernameTest(){
+		List<Menu> menuList = menuService.getMenuByUsername("20026080");
+		for (Menu menu : menuList){
+			System.out.println(menu.getMenuname()+"主菜单");
+			for (Menu menu1 : menu.getChildren()){
+				System.out.println(menu1.getMenuname()+"子菜单");
+			}
+		}
 	}
 
 }

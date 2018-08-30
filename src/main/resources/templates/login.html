@@ -11,17 +11,23 @@
 	<!--<meta name="format-detection" content="telephone=no">-->
 	<link rel="stylesheet" href="../layui/css/layui.css" media="all" />
 	<link rel="stylesheet" href="../css/public.css" media="all" />
+	<style>
+		.loginBody{ background:url("../images/login_bgtest.jpg") no-repeat center center;}
+	</style>
 </head>
 <body class="loginBody">
 	<form class="layui-form" action="/system/index" method="post">
 		<div class="login_face"><img src="../images/face.jpg" class="userAvatar"></div>
 		<div class="layui-form-item input-item">
-			<input type="text" placeholder="请输入用户名" id="userName" name="username" class="layui-input" lay-verify="required">
+			<input type="text" id="userName" name="username" class="layui-input" lay-verify="required">
 		</div>
 		<div class="layui-form-item input-item">
-			<input type="password" placeholder="请输入密码" id="password" name="password" class="layui-input" lay-verify="required">
+			<input type="password" id="password" name="password" class="layui-input" lay-verify="required">
 		</div>
-
+		<div class="layui-form-item input-item">
+			<input type="checkbox" name="rememberMe" value="true" lay-skin="primary" checked title="记住帐号?">
+		</div>
+		<br>
 		<div class="layui-form-item">
 			<input type="submit" class="layui-btn layui-block" value="提交"/>
 		</div>

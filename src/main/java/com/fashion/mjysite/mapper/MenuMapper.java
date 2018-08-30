@@ -12,6 +12,7 @@ public interface MenuMapper {
      *
      * @mbg.generated Wed Aug 29 11:55:59 CST 2018
      */
+    List<Menu> getMenuByUsername(String username);
     int deleteByPrimaryKey(Integer id);
 
     /**

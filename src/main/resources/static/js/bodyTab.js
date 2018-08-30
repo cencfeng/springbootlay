@@ -27,6 +27,7 @@ layui.define(["element","jquery"],function(exports){
         }
         var ulHtml = '';
         for(var i=0;i<data.length;i++){
+            alert("1111112222333");
             if(data[i].spread || data[i].spread == undefined){
                 ulHtml += '<li class="layui-nav-item layui-nav-itemed">';
             }else{
@@ -41,7 +42,7 @@ layui.define(["element","jquery"],function(exports){
                         ulHtml += '<i class="layui-icon" data-icon="'+data[i].icon+'">'+data[i].icon+'</i>';
                     }
                 }
-                ulHtml += '<cite>'+data[i].title+'</cite>';
+                ulHtml += '<cite>'+data[i].menuname+'</cite>';
                 ulHtml += '<span class="layui-nav-more"></span>';
                 ulHtml += '</a>';
                 ulHtml += '<dl class="layui-nav-child">';
@@ -79,18 +80,33 @@ layui.define(["element","jquery"],function(exports){
             ulHtml += '</li>';
         }
         return ulHtml;
-    }
+    }*/
 	//获取二级菜单数据
-	Tab.prototype.render = function() {
+	/*Tab.prototype.render = function() {
 		//显示左侧菜单
 		var _this = this;
-		$(".navBar ul").html('<li class="layui-nav-item layui-this"><a data-url="page/main.html"><i class="layui-icon" data-icon=""></i><cite>首页</cite></a></li>').append(_this.navBar(dataStr)).height($(window).height()-210);
+		$(".navBar ul").html('<li class="layui-nav-item layui-this"><a data-url="/system/index"><i class="layui-icon" data-icon=""></i><cite>首页</cite></a></li>').append(_this.navBar(dataStr)).height($(window).height()-210);
 		element.init();  //初始化页面元素
 		$(window).resize(function(){
 			$(".navBar").height($(window).height()-210);
 		})
-	}
-*/
+	}*/
+//获取二级菜单数据
+    Tab.prototype.render = function() {
+        var url = this.tabConfig.url;
+        $.get(url,function(data){
+            //显示左侧菜单
+            $(".navBar").html() == '';
+            var _this = this;
+            $(".navBar").html(navBar(data)).height($(window).height()-245);
+            element.init();  //初始化页面元素
+            $(window).resize(function(){
+                $(".navBar").height($(window).height()-245);
+            })
+
+        })
+    };
+
 	//是否点击窗口切换刷新页面
 	Tab.prototype.changeRegresh = function(index){
         if(changeRefreshStr == "true"){
