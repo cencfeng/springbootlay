@@ -129,6 +129,6 @@ WHERE
     from sys_user
   </select>
   <select id="selectUserByUserName" parameterType="String" resultType="User">
-    select * from sys_user where username = #{username}
+    select * from sys_user where username = #{username} and active = '1'
   </select>
 </mapper>

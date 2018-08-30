@@ -35,7 +35,7 @@ public class MjysiteApplicationTests {
 	@Test
 	public void md5jiami(){
 		String hashAlgorithmName = "MD5";
-		Object mima = "666666";
+		Object mima = "123456";
 		int hashIterations = 2;
 		ByteSource salt = ByteSource.Util.bytes("chengfeng");
 		String result = new SimpleHash(hashAlgorithmName, mima, salt, hashIterations).toBase64();

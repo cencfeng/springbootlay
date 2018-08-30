@@ -450,7 +450,4 @@ public class User implements Serializable{
     public void setSalt(String salt) {
         this.salt = salt == null ? null : salt.trim();
     }
-    public String getCredentialsSalt(){
-        return this.username+this.salt;
-    }
 }

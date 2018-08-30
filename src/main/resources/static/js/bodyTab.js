@@ -96,7 +96,6 @@ layui.define(["element","jquery"],function(exports){
         var url = this.tabConfig.url;
         $.get(url,function(data){
             //显示左侧菜单
-            $(".navBar").html() == '';
             var _this = this;
             $(".navBar").html(navBar(data)).height($(window).height()-245);
             element.init();  //初始化页面元素
