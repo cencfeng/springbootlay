@@ -30,13 +30,13 @@ public class SystemController {
     @RequestMapping("/index")
     public String index(User user, HttpServletRequest request, HttpSession session) {
         String error = null;
-        String rememberMe = request.getParameter("rememberMe");
+        //String rememberMe = request.getParameter("rememberMe");
         Subject subject = SecurityUtils.getSubject();
-        UsernamePasswordToken token = new UsernamePasswordToken(user.getUsername(), user.getPassword(), Boolean.valueOf(rememberMe));
-        //token.setRememberMe(false);
+        UsernamePasswordToken token = new UsernamePasswordToken(user.getUsername(), user.getPassword());
+        //, Boolean.valueOf(rememberMe)
+        token.setRememberMe(false);
         try {
             subject.login(token);
-            session.setAttribute("user",user);
         }catch (IncorrectCredentialsException e) {
             error = "登录密码错误.";
         } catch (ExcessiveAttemptsException e) {
@@ -60,15 +60,15 @@ public class SystemController {
         if(error == null){
             return "index";
         }else{
-            return "/error/403";
+            return "403";
         }
     }
     @RequestMapping("/getMenuByUsername")
     @ResponseBody
     public List<Menu> getUserMenuByUsername(HttpSession session){
-        System.out.println("11111");
-        User user = (User)session.getAttribute("user");
-        List<Menu> menuList = menuService.getMenuByUsername(user.getUsername());
+        //System.out.println("11111");
+        //User user = (User)session.getAttribute("user");
+        List<Menu> menuList = menuService.getMenuByUsername("20026080");
         return menuList;
     }
 }

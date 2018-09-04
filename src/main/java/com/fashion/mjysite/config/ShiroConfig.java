@@ -1,19 +1,33 @@
 package com.fashion.mjysite.config;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.mgt.SecurityManager;
+import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.crazycake.shiro.RedisCacheManager;
+import org.crazycake.shiro.RedisManager;
+import org.crazycake.shiro.RedisSessionDAO;
 import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Properties;
 @Configuration
 public class ShiroConfig {
+    @Value("${spring.redis.host}")
+    private String jedisHost;
+
+    @Value("${spring.redis.port}")
+    private Integer jedisPort;
+
+    @Value("${spring.redis.password}")
+    private String jedisPassword;
     @Bean
     public ShiroFilterFactoryBean shirFilter(SecurityManager securityManager) {
         System.out.println("ShiroConfiguration.shirFilter()拦截器启动");
@@ -37,7 +51,7 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setLoginUrl("/system/login");
         shiroFilterFactoryBean.setSuccessUrl("/system/index");
         //未授权界面;
-        shiroFilterFactoryBean.setUnauthorizedUrl("/403");
+        shiroFilterFactoryBean.setUnauthorizedUrl("403");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return shiroFilterFactoryBean;
     }
@@ -67,6 +81,8 @@ public class ShiroConfig {
     @Bean
     public SecurityManager securityManager(){
         DefaultWebSecurityManager securityManager =  new DefaultWebSecurityManager();
+        securityManager.setSessionManager(webSessionManager());
+        securityManager.setCacheManager(cacheManager());
         securityManager.setRealm(myShiroRealm());
         return securityManager;
     }
@@ -89,9 +105,42 @@ public class ShiroConfig {
         creator.setProxyTargetClass(true);
         return creator;
     }
+
     @Bean
     public static LifecycleBeanPostProcessor lifecycleBeanPostProcessor(){
         return new LifecycleBeanPostProcessor();
+    }
+    @Bean
+    public RedisManager redisManager(){
+        RedisManager manager = new RedisManager();
+        manager.setHost(jedisHost);
+        manager.setPort(jedisPort);
+        //这里是用户session的时长 跟上面的setGlobalSessionTimeout 应该保持一直（上面是1个小时 下面是秒做单位的 我们设置成3600）
+        manager.setExpire(60 * 60);
+        manager.setPassword(jedisPassword);
+        return manager;
+    }
+    @Bean(name="mycacheManager")//需要重新命名,不然会被spring框架重写
+    public RedisCacheManager cacheManager(){
+        RedisCacheManager manager = new RedisCacheManager();
+        manager.setRedisManager(redisManager());
+        return manager;
+    }
+    @Bean
+    public RedisSessionDAO redisSessionDAO(){
+        RedisSessionDAO sessionDAO = new RedisSessionDAO();
+        //sessionDAO.setKeyPrefix("wl_");
+        sessionDAO.setRedisManager(redisManager());
+        return sessionDAO;
+    }
+    @Bean
+    public SessionManager webSessionManager(){
+        DefaultWebSessionManager manager = new DefaultWebSessionManager();
+        //设置session过期时间为1小时(单位：毫秒)，默认为30分钟
+        manager.setGlobalSessionTimeout(60 * 60 * 1000);
+        manager.setSessionValidationSchedulerEnabled(true);
+        manager.setSessionDAO(redisSessionDAO());
+        return manager;
     }
 
     @Bean(name="simpleMappingExceptionResolver")
@@ -100,7 +149,7 @@ public class ShiroConfig {
         SimpleMappingExceptionResolver r = new SimpleMappingExceptionResolver();
         Properties mappings = new Properties();
         mappings.setProperty("DatabaseException", "databaseError");//数据库异常处理
-        mappings.setProperty("UnauthorizedException","/error/403");
+        mappings.setProperty("UnauthorizedException","403");
         r.setExceptionMappings(mappings);  // None by default
         r.setDefaultErrorView("error");    // No default
         r.setExceptionAttribute("ex");     // Default is "exception"

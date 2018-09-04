@@ -16,7 +16,8 @@ function navBar(strData){
             ulHtml += '<a href="javascript:;">';
             if(data[i].icon !== undefined && data[i].icon != ''){
                 if(data[i].icon.indexOf("icon-") !== -1){
-                    ulHtml += '<i class="iconfont '+data[i].icon+'" style="font-size: 20px" data-icon="'+data[i].icon+'"></i>';
+                    //ulHtml += '<i class="iconfont '+data[i].icon+'" style="font-size: 20px" data-icon="'+data[i].icon+'"></i>';
+                    ulHtml += '<i class="layui-icon '+data[i].icon+'" style="font-size: 20px"></i>';
                 }else{
                     ulHtml += '<i class="layui-icon" style="font-size: 20px" data-icon="'+data[i].icon+'">'+data[i].icon+'</i>';
                 }
@@ -33,9 +34,11 @@ function navBar(strData){
                 }
                 if(data[i].children[j].icon !== undefined && data[i].children[j].icon !== ''){
                     if(data[i].children[j].icon.indexOf("icon-") !== -1){
-                        ulHtml += '<i class="iconfont '+data[i].children[j].icon+'" style="font-size: 20px" data-icon="'+data[i].children[j].icon+'"></i>';
+                        // ulHtml += '<i class="iconfont '+data[i].children[j].icon+'" style="font-size: 20px" data-icon="'+data[i].children[j].icon+'"></i>';
+                        ulHtml += '<i class="layui-icon '+data[i].children[j].icon+'" style="font-size: 20px"></i>';
                     }else{
                         ulHtml += '<i class="layui-icon" style="font-size: 20px" data-icon="'+data[i].children[j].icon+'">'+data[i].children[j].icon+'</i>';
+                        //ulHtml += '<i class="layui-icon '+data[i].children[j].icon+'" style="font-size: 20px"></i>';
                     }
                 }
                 ulHtml += '<cite>'+data[i].children[j].menuname+'</cite></a></dd>';

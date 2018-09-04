@@ -10,6 +10,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
@@ -21,7 +23,10 @@ public class MjysiteApplicationTests {
 	private UserService userService;
 	@Autowired
 	private MenuService menuService;
-
+	@Autowired
+	private RedisTemplate redisTemplate;
+	@Autowired
+	private StringRedisTemplate stringRedisTemplate;
 	@Test
 	public void contextLoads() {
 	}
@@ -51,5 +56,19 @@ public class MjysiteApplicationTests {
 			}
 		}
 	}
+	@Test
+	public void getRedisTest(){
+		String username = stringRedisTemplate.opsForValue().get("username");
+		stringRedisTemplate.opsForValue().set("love","xiaoting");
+		System.out.println(stringRedisTemplate.opsForValue().get("love"));
+		System.out.println(username);
+	}
+	@Test
+    public void setRedisObject(){
+	    User user = new User();
+	    user.setUsername("cen");
+	    user.setNickname("chengfeng");
+	    redisTemplate.opsForValue().set("objecttest",user);
+    }
 
 }

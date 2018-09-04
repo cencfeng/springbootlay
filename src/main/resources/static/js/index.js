@@ -38,7 +38,7 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 	}*/
 	//页面加载时判断左侧菜单是否显示
 	//通过顶部菜单获取左侧菜单
-	$(".topLevelMenus li,.mobileTopLevelMenus dd").click(function(){
+	/*$(".topLevelMenus li,.mobileTopLevelMenus dd").click(function(){
 		if($(this).parents(".mobileTopLevelMenus").length != "0"){
 			$(".topLevelMenus li").eq($(this).index()).addClass("layui-this").siblings().removeClass("layui-this");
 		}else{
@@ -49,7 +49,7 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 		getData($(this).data("menu"));
 		//渲染顶部窗口
 		tab.tabMove();
-	})
+	})*/
 
 	//隐藏左侧导航
 	$(".hideMenu").click(function(){
@@ -147,10 +147,10 @@ function donation(){
 		area : ['260px', '367px'],
 		tab : [{
 			title : "微信",
-			content : "<div style='padding:30px;overflow:hidden;background:#d2d0d0;'><img src='/images/wechat.jpg'></div>"
+			content : "<div style='padding:30px;overflow:hidden;background:#d2d0d0;'><img src='/images/wechat.png' width='200' height='264'></div>"
 		},{
 			title : "支付宝",
-			content : "<div style='padding:30px;overflow:hidden;background:#d2d0d0;'><img src='/images/alipay.jpg'></div>"
+			content : "<div style='padding:30px;overflow:hidden;background:#d2d0d0;'><img src='/images/alipay.jpg' width='200' height='264'></div>"
 		}]
 	})
 }

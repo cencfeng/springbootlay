@@ -52,7 +52,7 @@ public class MyShiroRealm extends AuthorizingRealm{
         SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
                 user.getUsername(), //用户名
                 user.getPassword(), //密码
-                ByteSource.Util.bytes(user.getSalt()),//salt=username+salt
+                ByteSource.Util.bytes(user.getSalt()),//如果salt=username+salt,加密时salt要设置成username+salt,这里没有使用到
                 getName()  //realm name
         );
         //明文验证
@@ -61,6 +61,11 @@ public class MyShiroRealm extends AuthorizingRealm{
                 user.getPassword(), //密码
                 getName()  //realm name
         );*/
+        //Session session = SecurityUtils.getSubject().getSession();
+
+        //session.setAttribute("userSession", user);
+
+        //session.setAttribute("userSessionId", user.getId());
         return authenticationInfo;
     }
 }
