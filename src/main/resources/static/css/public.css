@@ -91,22 +91,23 @@ h2.method{ font-size:18px; line-height:45px; padding-left:5px;}
 .loginBody .layui-form-item{ position:relative;}
 .loginBody .layui-form-item label{ position:absolute; color:#757575; left:10px; top:9px; line-height:20px; background:#fff; padding:0 5px; font-size:14px; cursor:text;}
 .loginBody .layui-form-item.layui-input-focus label{ top:-10px; font-size:12px; color:#ff6700;}
-.loginBody .layui-form-item.layui-input-active label{ top:-10px; font-size:12px;}
-.loginBody .layui-input::-webkit-input-placeholder{color:#fff;}
-.loginBody .layui-input::-moz-placeholder{color:#fff;}
-.loginBody .layui-input:-ms-input-placeholder{color:#fff;}
-.loginBody .layui-input::placeholder{color:#fff;}
-.loginBody .layui-form-item.layui-input-focus input{ border-color:#ff6700 !important;}
-.loginBody .layui-input-focus .layui-input::-webkit-input-placeholder{color:#757575;}
-.loginBody .layui-input-focus .layui-input::-moz-placeholder{color:#757575;}
-.loginBody .layui-input-focus .layui-input:-ms-input-placeholder{color:#757575;}
-.loginBody .layui-input-focus .layui-input::placeholder{color:#757575;}
+/*.loginBody .layui-form-item.layui-input-active label{ top:-10px; font-size:12px;}*/
+/*.loginBody .layui-input::-webkit-input-placeholder{color:#fff;}*/
+/*.loginBody .layui-input::-moz-placeholder{color:#fff;}*/
+/*.loginBody .layui-input:-ms-input-placeholder{color:#fff;}*/
+/*.loginBody .layui-input::placeholder{color:#fff;}*/
+/*.loginBody .layui-form-item.layui-input-focus input{ border-color:#ff6700 !important;}*/
+/*.loginBody .layui-input-focus .layui-input::-webkit-input-placeholder{color:#757575;}*/
+/*.loginBody .layui-input-focus .layui-input::-moz-placeholder{color:#757575;}*/
+/*.loginBody .layui-input-focus .layui-input:-ms-input-placeholder{color:#757575;}*/
+/*.loginBody .layui-input-focus .layui-input::placeholder{color:#757575;}*/
 .loginBody .seraph{ font-size:30px; text-align:center;}
 .loginBody .seraph.icon-qq:hover{ color:#0288d1;}
 .loginBody .seraph.icon-wechat:hover{ color:#00d20d;}
 .loginBody .seraph.icon-sina:hover{ color:#d32f2f;}
 .imgCode{ position:relative;}
 #imgCode img{ position:absolute; top:1px; right:1px; cursor:pointer;}
+
 /*用户等级*/
 .layui-table-view .layui-table span.seraph{ font-size:25px !important;}
 .vip1{ color:#994a2b;}

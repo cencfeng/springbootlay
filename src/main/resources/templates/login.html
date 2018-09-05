@@ -12,31 +12,43 @@
 	<link rel="stylesheet" href="../layui/css/layui.css" media="all" />
 	<link rel="stylesheet" href="../css/public.css" media="all" />
 	<style>
-		.loginBody{ background:url("../images/login_bgtest.jpg") no-repeat center center;}
+		.loginBody{ background:url(/images/loginbg.jpg);background-size:100% 100%;position:fixed;left:0;top:0;right:0;bottom:0;}
 	</style>
 </head>
 <body class="loginBody">
-	<form class="layui-form" action="/system/index" method="post">
-		<div class="login_face"><img src="../images/face.jpg" class="userAvatar"></div>
-		<div class="layui-form-item input-item">
-			<input type="text" id="userName" name="username" class="layui-input" lay-verify="required">
-		</div>
-		<div class="layui-form-item input-item">
-			<input type="password" id="password" name="password" class="layui-input" lay-verify="required">
-		</div>
-		<div class="layui-form-item input-item">
-			<input type="checkbox" name="rememberMe" value="true" lay-skin="primary" checked title="记住帐号?">
-		</div>
-		<br>
-		<div class="layui-form-item">
-			<input type="submit" class="layui-btn layui-block" value="提交"/>
-		</div>
-		<div class="layui-form-item layui-row">
-			<a href="javascript:;" class="seraph icon-qq layui-col-xs4 layui-col-sm4 layui-col-md4 layui-col-lg4"></a>
-			<a href="javascript:;" class="seraph icon-wechat layui-col-xs4 layui-col-sm4 layui-col-md4 layui-col-lg4"></a>
-			<a href="javascript:;" class="seraph icon-sina layui-col-xs4 layui-col-sm4 layui-col-md4 layui-col-lg4"></a>
-		</div>
-	</form>
-	<script type="text/javascript" src="../layui/layui.js"></script>
+<form class="layui-form" action="/system/index" method="post">
+	<div class="login_face"><img src="../images/face.jpg" class="userAvatar"></div>
+	<div class="layui-form-item input-item">
+		<input type="text" id="userName" name="username" placeholder="用户名" class="layui-input" lay-verify="required">
+	</div>
+	<div class="layui-form-item input-item">
+		<input type="password" id="password" name="password" placeholder="密码" class="layui-input" lay-verify="required">
+	</div>
+	<div class="layui-form-item input-item">
+		<input type="checkbox" name="rememberMe" value="true" lay-skin="primary" title="记住帐号?">
+	</div>
+	<br>
+	<div class="layui-form-item">
+		<input type="submit" class="layui-btn layui-block" value="登录" id="btnlogin"/>
+	</div>
+	<div class="layui-form-item layui-row">
+		<a href="javascript:;" class="seraph icon-qq layui-col-xs4 layui-col-sm4 layui-col-md4 layui-col-lg4"></a>
+		<a href="javascript:;" class="seraph icon-wechat layui-col-xs4 layui-col-sm4 layui-col-md4 layui-col-lg4"></a>
+		<a href="javascript:;" class="seraph icon-sina layui-col-xs4 layui-col-sm4 layui-col-md4 layui-col-lg4"></a>
+	</div>
+</form>
+<script type="text/javascript" src="../layui/layui.js"></script>
+<script type="text/javascript">
+    layui.use(['layer', 'form'], function() {
+        var layer = layui.layer,
+            $ = layui.jquery,
+            form = layui.form;
+        $('#btnlogin').keydown(function (e) {
+            if (e.which == 13) {
+                $("#btnlogin").trigger("click");
+            }
+        });
+    });
+</script>
 </body>
 </html>

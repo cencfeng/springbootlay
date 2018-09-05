@@ -39,14 +39,17 @@ public class RestResponse extends HashMap<String, Object> {
         if (data != null) put("data", data);
         return this;
     }
-
+    public RestResponse setData(String url) {
+        if (url != null) put("url", url);
+        return this;
+    }
     public RestResponse setPage(Integer page) {
         if (page != null) put("page", page);
         return this;
     }
-
+    
     public RestResponse setCurrentPage(Integer currentPage){
-        if (currentPage != null) put("currentPage", currentPage);
+    	if (currentPage != null) put("currentPage", currentPage);
         return this;
     }
 

@@ -1,11 +1,14 @@
 package com.fashion.mjysite.config;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
+import org.apache.shiro.codec.Base64;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
+import org.apache.shiro.web.mgt.CookieRememberMeManager;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.apache.shiro.web.servlet.SimpleCookie;
 import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.beans.factory.annotation.Value;
@@ -81,6 +84,7 @@ public class ShiroConfig {
     @Bean
     public SecurityManager securityManager(){
         DefaultWebSecurityManager securityManager =  new DefaultWebSecurityManager();
+        securityManager.setRememberMeManager(rememberMeManager());
         securityManager.setSessionManager(webSessionManager());
         securityManager.setCacheManager(cacheManager());
         securityManager.setRealm(myShiroRealm());
@@ -104,6 +108,23 @@ public class ShiroConfig {
         DefaultAdvisorAutoProxyCreator creator=new DefaultAdvisorAutoProxyCreator();
         creator.setProxyTargetClass(true);
         return creator;
+    }
+    @Bean
+    public SimpleCookie rememberMeCookie(){
+        //这个参数是cookie的名称，对应前端的checkbox的name = rememberMe
+        SimpleCookie cookie = new SimpleCookie("rememberMe");
+        cookie.setHttpOnly(true);
+        //记住我有效期长达30天
+        cookie.setMaxAge(2592000);
+        return cookie;
+    }
+
+    @Bean
+    public CookieRememberMeManager rememberMeManager(){
+        CookieRememberMeManager rememberMeManager = new CookieRememberMeManager();
+        rememberMeManager.setCookie(rememberMeCookie());
+        rememberMeManager.setCipherKey(Base64.decode("2AvVhdsgUs0FSA3SDFAdag=="));
+        return rememberMeManager;
     }
 
     @Bean
@@ -129,7 +150,7 @@ public class ShiroConfig {
     @Bean
     public RedisSessionDAO redisSessionDAO(){
         RedisSessionDAO sessionDAO = new RedisSessionDAO();
-        //sessionDAO.setKeyPrefix("wl_");
+//        sessionDAO.setKeyPrefix("wl_");
         sessionDAO.setRedisManager(redisManager());
         return sessionDAO;
     }
