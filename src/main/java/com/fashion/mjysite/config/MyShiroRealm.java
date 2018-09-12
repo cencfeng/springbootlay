@@ -19,8 +19,8 @@ public class MyShiroRealm extends AuthorizingRealm{
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
         User user = new User();
         try{
-            user = userService.selectUserMapByUserName((String)principals.getPrimaryPrincipal());
-
+            user = (User)principals.getPrimaryPrincipal();
+            user = userService.selectUserMapByUserName(user.getUsername());
         }catch (Exception e){
             System.out.println(e.toString());
         }
@@ -31,7 +31,7 @@ public class MyShiroRealm extends AuthorizingRealm{
             authorizationInfo.addStringPermission(menu.getPermission());
         }
         System.out.println(authorizationInfo.getStringPermissions());
-        System.out.println(authorizationInfo.getRoles());
+        System.out.println(authorizationInfo.getRoles()+"rolessss");
         return authorizationInfo;
     }
 
@@ -50,7 +50,7 @@ public class MyShiroRealm extends AuthorizingRealm{
         }
         //加密方式
         SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
-                user.getUsername(), //用户名
+                user, //用户名,和getSubject().getPrincipal(),前段shiro.rpincipal结果相关
                 user.getPassword(), //密码
                 ByteSource.Util.bytes(user.getSalt()),//如果salt=username+salt,加密时salt要设置成username+salt,这里没有使用到
                 getName()  //realm name

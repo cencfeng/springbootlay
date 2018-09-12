@@ -34,7 +34,7 @@ public class ShiroConfig {
     private String jedisPassword;
     @Bean
     public ShiroFilterFactoryBean shirFilter(SecurityManager securityManager) {
-        System.out.println("ShiroConfiguration.shirFilter()拦截器启动");
+//        System.out.println("ShiroConfiguration.shirFilter()拦截器启动");
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         //拦截器.
@@ -148,22 +148,22 @@ public class ShiroConfig {
         manager.setRedisManager(redisManager());
         return manager;
     }
-    @Bean
-    public RedisSessionDAO redisSessionDAO(){
-        RedisSessionDAO sessionDAO = new RedisSessionDAO();
-//        sessionDAO.setKeyPrefix("wl_");
-        sessionDAO.setRedisManager(redisManager());
-        return sessionDAO;
-    }
-    @Bean
-    public SessionManager webSessionManager(){
-        DefaultWebSessionManager manager = new DefaultWebSessionManager();
-        //设置session过期时间为1小时(单位：毫秒)，默认为30分钟
-        manager.setGlobalSessionTimeout(60 * 60 * 1000);
-        manager.setSessionValidationSchedulerEnabled(true);
-        manager.setSessionDAO(redisSessionDAO());
-        return manager;
-    }
+//    @Bean
+//    public RedisSessionDAO redisSessionDAO(){
+//        RedisSessionDAO sessionDAO = new RedisSessionDAO();
+//        sessionDAO.setKeyPrefix("cen_");
+//        sessionDAO.setRedisManager(redisManager());
+//        return sessionDAO;
+//    }
+//    @Bean
+//    public SessionManager webSessionManager(){
+//        DefaultWebSessionManager manager = new DefaultWebSessionManager();
+//        //设置session过期时间为1小时(单位：毫秒)，默认为30分钟
+//        manager.setGlobalSessionTimeout(60 * 60 * 1000);
+//        manager.setSessionValidationSchedulerEnabled(true);
+//        manager.setSessionDAO(redisSessionDAO());
+//        return manager;
+//    }
     @Bean
     public ShiroDialect shiroDialect() {
         return new ShiroDialect();

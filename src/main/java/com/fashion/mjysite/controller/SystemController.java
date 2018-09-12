@@ -78,4 +78,8 @@ public class SystemController {
         List<Menu> menuList = menuService.getMenuByUsername(user.getUsername());
         return menuList;
     }
+    @RequestMapping("/changepassword")
+    public String changePassword(){
+        return "user/changepassword";
+    }
 }

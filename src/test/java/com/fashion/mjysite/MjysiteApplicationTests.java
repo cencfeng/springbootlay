@@ -4,7 +4,9 @@ import com.fashion.mjysite.entity.Menu;
 import com.fashion.mjysite.entity.User;
 import com.fashion.mjysite.service.MenuService;
 import com.fashion.mjysite.service.UserService;
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.crypto.hash.SimpleHash;
+import org.apache.shiro.session.Session;
 import org.apache.shiro.util.ByteSource;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -62,6 +64,7 @@ public class MjysiteApplicationTests {
 		stringRedisTemplate.opsForValue().set("love","xiaoting");
 		System.out.println(stringRedisTemplate.opsForValue().get("love"));
 		System.out.println(username);
+
 	}
 	@Test
     public void setRedisObject(){
@@ -70,5 +73,11 @@ public class MjysiteApplicationTests {
 	    user.setNickname("chengfeng");
 	    redisTemplate.opsForValue().set("objecttest",user);
     }
+    @Test
+	public void getShiroSession(){
+		Session session = SecurityUtils.getSubject().getSession();
+		User user = (User)session.getAttribute("user");
+		System.out.println(user.getUsername());
+	}
 
 }
