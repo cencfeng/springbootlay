@@ -1,4 +1,5 @@
 package com.fashion.mjysite.config;
+import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.codec.Base64;
 import org.apache.shiro.mgt.SecurityManager;
@@ -85,8 +86,8 @@ public class ShiroConfig {
     public SecurityManager securityManager(){
         DefaultWebSecurityManager securityManager =  new DefaultWebSecurityManager();
         securityManager.setRememberMeManager(rememberMeManager());
-        securityManager.setSessionManager(webSessionManager());
-        securityManager.setCacheManager(cacheManager());
+//        securityManager.setSessionManager(webSessionManager());
+        securityManager.setCacheManager(redisCacheManager());
         securityManager.setRealm(myShiroRealm());
         return securityManager;
     }
@@ -141,8 +142,8 @@ public class ShiroConfig {
         manager.setPassword(jedisPassword);
         return manager;
     }
-    @Bean(name="mycacheManager")//需要重新命名,不然会被spring框架重写
-    public RedisCacheManager cacheManager(){
+    @Bean(name="redisCacheManager")//需要重新命名,不然会被spring框架重写
+    public RedisCacheManager redisCacheManager(){
         RedisCacheManager manager = new RedisCacheManager();
         manager.setRedisManager(redisManager());
         return manager;
@@ -163,7 +164,10 @@ public class ShiroConfig {
         manager.setSessionDAO(redisSessionDAO());
         return manager;
     }
-
+    @Bean
+    public ShiroDialect shiroDialect() {
+        return new ShiroDialect();
+    }
     @Bean(name="simpleMappingExceptionResolver")
     public SimpleMappingExceptionResolver
     createSimpleMappingExceptionResolver() {

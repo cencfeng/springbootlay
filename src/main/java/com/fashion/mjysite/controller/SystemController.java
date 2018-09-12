@@ -28,7 +28,6 @@ public class SystemController {
     }
     @RequestMapping("/index")
     public RestResponse index(User user, HttpServletRequest request) {
-        String error = null;
         String rememberMe = request.getParameter("rememberMe");
         //, Boolean.valueOf(rememberMe)
         //token.setRememberMe(false);
@@ -43,26 +42,24 @@ public class SystemController {
                 subject.login(token);
                 //map.put("url","index");
             }catch (IncorrectCredentialsException e) {
-                error = "登录密码错误.";
+                return RestResponse.failure("登录密码错误.").setData("login");
             } catch (ExcessiveAttemptsException e) {
-                error = "登录失败次数过多";
+                return RestResponse.failure("登录失败次数过多");
             } catch (LockedAccountException e) {
-                error = "帐号已被锁定.";
+                return RestResponse.failure("帐号已被锁定.");
             } catch (DisabledAccountException e) {
-                error = "帐号已被禁用.";
+                return RestResponse.failure("帐号已被禁用.");
             } catch (ExpiredCredentialsException e) {
-                error = "帐号已过期.";
+                return RestResponse.failure("帐号已过期.");
             } catch (UnknownAccountException e) {
-                error = "帐号不存在";
+                return RestResponse.failure("帐号不存在");
             } catch (UnauthorizedException e) {
-                error = "您没有得到相应的授权！";
+                return RestResponse.failure("您没有得到相应的授权！");
+            }catch (Exception e){
+                return RestResponse.failure("failed"+e.toString()).setData("403");
             }
-            System.out.println(error);
-            if(error == null){
-                return RestResponse.success("登录成功").setData("index");
-            }else{
-                return RestResponse.failure(error);
-            }
+            return RestResponse.success("登录成功").setData("index");
+
         }
 
 
@@ -73,10 +70,12 @@ public class SystemController {
     }
     @RequestMapping("/getMenuByUsername")
     @ResponseBody
-    public List<Menu> getUserMenuByUsername(HttpSession session){
+    public List<Menu> getUserMenuByUsername() throws Exception{
         //System.out.println("11111");
         //User user = (User)session.getAttribute("user");
-        List<Menu> menuList = menuService.getMenuByUsername("20026080");
+        User user = (User)SecurityUtils.getSubject().getPrincipal();//转换失败,spring-boot-devtools去掉,获取结果和reaml有关
+//        System.out.println(user.getUsername());
+        List<Menu> menuList = menuService.getMenuByUsername(user.getUsername());
         return menuList;
     }
 }
