@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<html xmlns:shiro="http://www.pollix.at/thymeleaf/shiro" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <title>首页</title>
@@ -59,7 +59,7 @@
                 <li class="layui-nav-item" id="userInfo">
                     <a href="javascript:;"><img src="/images/face.jpg" class="layui-nav-img userAvatar" width="35" height="35"><cite class="adminName"> <shiro:principal property="nickname"/></cite></a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;" data-url="/user/userInfo.html"><i class="layui-icon layui-icon-friends"></i><cite>个人资料</cite></a></dd>
+                        <dd><a href="javascript:;" data-url="/user/userInfor"><i class="layui-icon layui-icon-friends"></i><cite>个人资料</cite></a></dd>
                         <dd><a href="javascript:;" data-url="/system/changepassword"><i class="layui-icon layui-icon-password"></i><cite>修改密码</cite></a></dd>
                         <dd><a href="javascript:;" class="showNotice"><i class="layui-icon layui-icon-notice"></i><cite>系统公告</cite><span class="layui-badge-dot"></span></a></dd>
                         <dd pc><a href="javascript:;" class="functionSetting"><i class="layui-icon">&#xe620;</i><cite>功能设定</cite><span class="layui-badge-dot"></span></a></dd>
@@ -73,7 +73,7 @@
     <!-- 左侧导航 -->
     <div class="layui-side layui-bg-black">
         <div class="user-photo">
-            <a class="img" title="我的头像" ><img src="/images/face.jpg" class="userAvatar"></a>
+            <a class="img" title="我的头像" ><img src="" class="userAvatar"></a>
             <p>你好！<span class="userName">
                 <shiro:principal property="nickname"/>
             </span></p>

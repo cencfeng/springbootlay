@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html class="loginHtml">
+<head>
+	<meta charset="utf-8">
+	<title>糗百</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="../layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="../css/public.css" media="all" />
+</head>
+<body>
+<form class="layui-form">
+	<table class="layui-hide" id="tarticle" lay-filter = "tarticle"></table>
+</form>
+
+<div id="atent" hidden="hidden">
+	<form  class="layui-form">
+		内容:<textarea id="editarticle" name="article" class="layui-textarea" style="height: 200px"></textarea>
+	</form>
+</div>
+<script type="text/javascript" src="../layui/layui.js"></script>
+<script type = "text/html" id = "barBtn">
+	<a class="layui-btn layui-btn-mini" lay-event="edit">编辑</a>
+	<a class="layui-btn layui-btn-mini layui-btn-danger" lay-event="del">删除</a>
+</script>
+<script type="text/javascript">
+    layui.use(['layer', 'table', 'form'], function() {
+        var layer = layui.layer,
+            $ = layui.jquery,
+            table = layui.table,
+            form = layui.form;
+        table.render({
+            elem: '#tarticle'
+            , url: '/article/getarticle'
+            , cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+            , cols: [
+                [
+                {field: 'id', title: 'ID'}
+                , {field: 'articleid', title: 'ARTICLEID'}
+                , {field: 'article', title: '内容'}
+                , {title: '操作', toolbar: '#barBtn'}
+            ]
+			]
+           ,page: true
+			// ,parseData: function(res){ //将原始数据解析成 table 组件所规定的数据
+        //     return {
+        //         "code": res.status, //解析接口状态
+        //         "msg": res.message, //解析提示文本
+        //         "count": res.total, //解析数据长度
+        //         "data": res.data //解析数据列表
+        //     };
+        // }
+        });
+        table.on('tool(tarticle)', function (obj) {
+			switch (obj.event){
+				case 'edit':
+					$("#editarticle").val(obj.data.article);
+				    layer.open({
+						type: 1,   //五种类型：0（信息框，默认）1（页面层）2（iframe层）3（加载层）4（tips层）
+						title: 'edit',
+						scrollbar:false,
+                        area: ['552px', '300px'],
+						btn: ['确定', '取消'],
+						content: $("#atent"),//'/article/getarticle' //type 2
+						yes: function(){
+						    var editarticle = $("#editarticle").val();
+						    $.post('/article/editarticle',{article:editarticle},function (res) {
+								alert(res);
+                            })
+						}
+					});break;
+				case 'del':
+				    layer.confirm('确定删除', function (index) {
+						layer.msg('del("'+ obj.data.id +'")');
+                    });break;
+				default:  layer.msg(obj.event);
+			}
+        });
+    })
+</script>
+</body>
+</html>

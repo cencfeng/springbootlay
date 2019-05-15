@@ -15,7 +15,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.util.ResourceUtils;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
@@ -58,26 +61,32 @@ public class MjysiteApplicationTests {
 			}
 		}
 	}
-	@Test
-	public void getRedisTest(){
-		String username = stringRedisTemplate.opsForValue().get("username");
-		stringRedisTemplate.opsForValue().set("love","xiaoting");
-		System.out.println(stringRedisTemplate.opsForValue().get("love"));
-		System.out.println(username);
-
-	}
-	@Test
-    public void setRedisObject(){
-	    User user = new User();
-	    user.setUsername("cen");
-	    user.setNickname("chengfeng");
-	    redisTemplate.opsForValue().set("objecttest",user);
-    }
-    @Test
-	public void getShiroSession(){
-		Session session = SecurityUtils.getSubject().getSession();
-		User user = (User)session.getAttribute("user");
-		System.out.println(user.getUsername());
-	}
+//	@Test
+//	public void getRedisTest(){
+//		String username = stringRedisTemplate.opsForValue().get("username");
+//		stringRedisTemplate.opsForValue().set("love","xiaoting");
+//		System.out.println(stringRedisTemplate.opsForValue().get("love"));
+//		System.out.println(username);
+//
+//	}
+//	@Test
+//    public void setRedisObject(){
+//	    User user = new User();
+//	    user.setUsername("cen");
+//	    user.setNickname("chengfeng");
+//	    redisTemplate.opsForValue().set("objecttest",user);
+//    }
+//    @Test
+//	public void getShiroSession(){
+//		Session session = SecurityUtils.getSubject().getSession();
+//		User user = (User)session.getAttribute("user");
+//		System.out.println(user.getUsername());
+//	}
+//	@Test
+//	public void getPath() throws FileNotFoundException {
+//		File path = new File(ResourceUtils.getURL("classpath:").getPath());
+//		File f = new File(path, "static/images/upload/");
+//		System.out.println(f.getAbsolutePath());
+//	}
 
 }

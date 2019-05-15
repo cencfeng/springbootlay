@@ -19,7 +19,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/system")
-public class SystemController {
+public class SystemController{
     @Autowired
     private MenuService menuService;
     @RequestMapping("/login")
@@ -33,6 +33,7 @@ public class SystemController {
         //token.setRememberMe(false);
         //Map<String,Object> map = new HashMap<String, Object>();
         HttpSession session = request.getSession();
+        session.setAttribute("user", user);
         if(session == null){
             return RestResponse.failure("session超时");
         }else{
@@ -56,7 +57,7 @@ public class SystemController {
             } catch (UnauthorizedException e) {
                 return RestResponse.failure("您没有得到相应的授权！");
             }catch (Exception e){
-                return RestResponse.failure("failed"+e.toString()).setData("403");
+                return RestResponse.failure("failed"+e.toString()).setData("login");
             }
             return RestResponse.success("登录成功").setData("index");
 

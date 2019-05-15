@@ -15,13 +15,13 @@ layui.use(['form','jquery',"layer"],function() {
     }
 
     //判断是否设置过头像，如果设置过则修改顶部、左侧和个人资料中的头像，否则使用默认头像
-    if(window.sessionStorage.getItem('userFace') &&  $(".userAvatar").length > 0){
+   /* if(window.sessionStorage.getItem('userFace') &&  $(".userAvatar").length > 0){
         $("#userFace").attr("src",window.sessionStorage.getItem('userFace'));
         $(".userAvatar").attr("src",$(".userAvatar").attr("src").split("images/")[0] + "images/" + window.sessionStorage.getItem('userFace').split("images/")[1]);
     }else{
         $("#userFace").attr("src","../images/face.jpg");
     }
-
+*/
     //公告层
     function showNotice(){
         layer.open({
@@ -73,13 +73,13 @@ layui.use(['form','jquery',"layer"],function() {
                             '<p>请输入“123456”，否则不会解锁成功哦！！！</p>'+
                         '</div>',
             closeBtn : 0,
-            shade : 0.9,
-            success : function(){
-                //判断是否设置过头像，如果设置过则修改顶部、左侧和个人资料中的头像，否则使用默认头像
-                if(window.sessionStorage.getItem('userFace') &&  $(".userAvatar").length > 0){
-                    $(".userAvatar").attr("src",$(".userAvatar").attr("src").split("/images/")[0] + "/images/" + window.sessionStorage.getItem('userFace').split("images/")[1]);
-                }
-            }
+            shade : 0.9
+            // success : function(){
+            //     //判断是否设置过头像，如果设置过则修改顶部、左侧和个人资料中的头像，否则使用默认头像
+            //     if(window.sessionStorage.getItem('userFace') &&  $(".userAvatar").length > 0){
+            //         $(".userAvatar").attr("src",$(".userAvatar").attr("src").split("/images/")[0] + "/images/" + window.sessionStorage.getItem('userFace').split("images/")[1]);
+            //     }
+            // }
         })
         $(".admin-header-lock-input").focus();
     }

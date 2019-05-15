@@ -5,7 +5,7 @@ function navBar(strData){
     }else{
         data = strData;
     }
-    var ulHtml = '<ul class="layui-nav layui-nav-tree">';
+    var ulHtml = '<ul class="layui-nav layui-nav-tree layui-inline">';
     for(var i=0;i<data.length;i++){
         if(data[i].spread){
             ulHtml += '<li class="layui-nav-item layui-nav-itemed">';
@@ -23,7 +23,7 @@ function navBar(strData){
                 }
             }
             ulHtml += '<cite>'+data[i].menuname+'</cite>';
-            ulHtml += '<span class="layui-nav-more"></span>';
+            //ulHtml += '<span class="layui-nav-more"></span>';
             ulHtml += '</a>';
             ulHtml += '<dl class="layui-nav-child">';
             for(var j=0;j<data[i].children.length;j++){

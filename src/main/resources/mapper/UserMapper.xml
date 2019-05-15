@@ -62,6 +62,7 @@ LEFT JOIN sys_menu m ON mr.menu_id = m.id
 WHERE
 	u.username = #{username}
   </select>
+  <!--后期完善需加入菜单标识位标识菜单或者另写sql只获取菜单,以免普通图片按钮权限都显示到左侧菜单上-->
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     <!--
       WARNING - @mbg.generated
